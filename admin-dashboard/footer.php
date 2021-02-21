@@ -17,6 +17,7 @@
 <script src="assets/js/admin.js"></script>
 <script src='assets/vendors/calendar/moment.min.js'></script>
 <script src='assets/vendors/calendar/fullcalendar.js'></script>
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <!-- <script src='assets/vendors/switcher/switcher.js'></script> -->
 <script>
   $(document).ready(function() {
@@ -36,8 +37,7 @@
 
       editable: true,
       eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
+      events: [{
           title: 'All Day Event',
           start: '2019-03-01'
         },
@@ -95,6 +95,5 @@
     });
 
   });
-
 </script>
 </body>
