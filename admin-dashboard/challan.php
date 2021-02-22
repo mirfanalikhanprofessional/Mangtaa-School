@@ -23,18 +23,6 @@ $obj = new selectionp2;
 			</select>
 			<input type="submit" class="btn" value="Go" name="btn_sub">
 		</form>
-		<?php
-		if (isset($_POST['btn_sub'])) {
-			$select = $_POST['select'];
-			if (isset($select)) {
-				$result = $obj->select("SELECT * FROM student WHERE Student_name = '$select'");
-				$find_name = mysqli_fetch_array($result);
-				$find_name[0] = $id;
-				$find_name[1] = $name;
-				$find_name[2] = $class;
-			}
-		}
-		?>
 		<div class="row" id="receipt">
 			<div class="col-xl-12">
 				<!-- PAGE CONTENT BEGINS -->
@@ -101,13 +89,43 @@ $obj = new selectionp2;
 										<div style="margin-top: -8%; padding-left: 110px;">
 											<ul class="list-unstyled  spaced">
 												<li>
-													<i class="ace-icon fa fa-caret-right green"></i><?php echo ucfirst(($name)); ?>
+													<i class="ace-icon fa fa-caret-right green"></i><?php
+														if (isset($_POST['btn_sub'])) {
+															$select = $_POST['select'];
+															if (isset($select)) {	
+															$result = $obj->select("SELECT * FROM student WHERE Student_name = '$select'");
+															$find_name = mysqli_fetch_array($result);
+															$name = $find_name[1];
+															echo ucfirst(($name));
+															}
+														} 
+														?>
 												</li>
 												<li>
-													<i class="ace-icon fa fa-caret-right green"></i><?php echo $id; ?>
+													<i class="ace-icon fa fa-caret-right green"></i><?php
+														if (isset($_POST['btn_sub'])) {
+															$select = $_POST['select'];
+															if (isset($select)) {	
+															$result = $obj->select("SELECT * FROM student WHERE Student_name = '$select'");
+															$find_name = mysqli_fetch_array($result);
+															$id = $find_name[0];
+															echo $id;
+															}
+														}
+														?>
 												</li>
 												<li>
-													<i class="ace-icon fa fa-caret-right green"></i><?php echo $class; ?>
+													<i class="ace-icon fa fa-caret-right green"></i><?php
+														if (isset($_POST['btn_sub'])) {
+															$select = $_POST['select'];
+															if (isset($select)) {	
+															$result = $obj->select("SELECT * FROM student WHERE Student_name = '$select'");
+															$find_name = mysqli_fetch_array($result);
+															$class = $find_name[2];
+															echo $class;
+															}
+														} 
+														?>
 												</li>
 											</ul>
 										</div>

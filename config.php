@@ -121,6 +121,23 @@ class updatep2 extends updatep1{
 		return $update;
 	}
 }
+abstract class createclassp1 extends Connectiondbp2{
+	abstract function create($query);
+}
+class createclassp2 extends createclassp1 {
+	function create($query){
+		$create = mysqli_query($this->connect(),$query);
+		if($create > 0){
+			return true;
+			header('admin-dashboard/batch-information.php?msg=class_created_sucessfully');
+		}
+		else{
+			return false;
+			header('create-class.php?msg=class_not_created_sucessfully');
+			echo ('class creation failed');
+		}
+	}
+}
 
 ?>
 

@@ -59,6 +59,12 @@
 						<span class=""><i class=""></i></span>
 					</a>
 				</li>
+				<li>
+					<a href="create-class.php" class="ttr-material-button">
+						<span class="ttr-icon"><i class="ti-book"></i></span>
+						<span class="ttr-label">Create class</span>
+					</a>
+				</li>
 				<a href="admin-profile-edit.php" class="ttr-material-button">
 					<span class="ttr-icon"><i class="ti-user"></i></span>
 					<span class="ttr-label">My Profile</span>
