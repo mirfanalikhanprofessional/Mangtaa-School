@@ -214,14 +214,12 @@ include('header.php')
  .py-lg-4 {
     padding-top: 1.5rem !important;
   }
-
-h4,
- {
+h4 {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
-}
+  }
 /* / contact1-responsive */
 /* /contact1 */
 </style>

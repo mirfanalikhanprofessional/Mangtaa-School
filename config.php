@@ -17,7 +17,7 @@ abstract class studentloginareap1 extends Connectiondbp2{
 }
 class studentloginareap2 extends studentloginareap1{
 	function login($email,$password,$txtapp){
-		if(isset($_POST['txtapp'])=='2'){
+		if(isset($_POST['txtapp'])==2){
 			$query="SELECT * FROM student WHERE Student_email='$email' AND Student_password='$password'";
 			$result = mysqli_query($this->connect(),$query);
 			$count = mysqli_num_rows($result);
@@ -29,14 +29,14 @@ class studentloginareap2 extends studentloginareap1{
 			}
 		}
 		else{
-			$query="SELECT * FROM registered_candidate WHERE Applicant_email='$email' AND Applicant_password='$password'";
-			$result = mysqli_query($this->connect(),$query);
-			$count = mysqli_num_rows($result);
+			$query="select * from registered_candidate WHERE Applicant_email='$email' AND Applicant_password='$password'";
+			$result = mysqli_query($this->connect(),$query) or die("hh working");
+			$count = mysqli_num_rows($result) or die("not working");
 			if($count > 0){
 				header('Location: student-dashboard/dashboard.php');
 			}
 			else{
-	           header("Location: login.php?msg=InvalidLogin");
+	           header("Location: login.php?msg=Invalid Login");
 			}	
 		}
 	}
@@ -85,10 +85,10 @@ class selectionp2 extends selectionp1{
 	}
 }
 abstract class Contactdetailp1 extends Connectiondbp2{
-	abstract function detail($name,$subject,$email,$phone,$message);
+	abstract function detail($name,$subject,$email,$phone,$message,$sender);
 }
 class Contactdetails extends Contactdetailp1{
-	function detail($name,$subject,$email,$phone,$message){
+	function detail($name,$subject,$email,$phone,$message,$sender){
 		$insert=mysqli_query($this->connect(),"INSERT INTO contact(Name,Subject,Sender,Phone,Message) VALUES ('$name','$subject','$sender','$phone','$message')");
 		if($insert==true){
 	       header("Location:contact.php");

@@ -110,7 +110,7 @@
 						<div class="col-lg-12">
 							<div class="form-group">
 								<div class="checkbox-role">	
-										<input type="checkbox" class="checkbox-role-input" name="txtapp" value="2" style="width: 20px; height: 20px;}">
+										<input type="checkbox" class="checkbox-role-input" name="txtapp" value="2" style="width: 20px; height: 20px;">
 										<label class="checkbox-role-label">Are you a enrolled student</label>
 								</div>
 							</div>

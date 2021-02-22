@@ -9,7 +9,8 @@ if (isset($_GET['btn_sub']))
 	$email= $_GET['Sender'];
 	$phone=$_GET['Phone'];
 	$Message= $_GET['Message'];
+	$sender = $_GET['Sender'];
 
-	$obj->detail($name,$subject,$email,$phone,$Message);
+	$obj->detail($name,$subject,$email,$phone,$Message,$sender);
 }
  ?>

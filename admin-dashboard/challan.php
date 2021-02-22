@@ -8,7 +8,7 @@ $obj = new selectionp2;
 
 <div class="container">
 	<div class="col-4">
-		/* include('sidebar.php'); */ /* ?> */
+		<?php include('sidebar.php');  ?> 
 	</div>
 	<div class="col-8" style="margin-left: 330px; margin-top:100px;">
 		<form action="" method="POST">
