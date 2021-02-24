@@ -28,6 +28,12 @@
 					</a>
 				</li>
 				<li>
+					<a href="admin-admission-edit.php" class="ttr-material-button">
+						<span class="ttr-icon"><i class="ti-book"></i></span>
+						<span class="ttr-label">Student Admission form edit</span>
+					</a>
+				</li>
+				<li>
 					<a href="view-paid-fees.php" class="ttr-material-button">
 						<span class="ttr-icon"><i class="ti-book"></i></span>
 						<span class="ttr-label">fees paid by student</span>

@@ -47,35 +47,6 @@
 	<link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
 	
 </head>
-<style type="text/css">
-	.checkbox-role .checkbox-role-input{
-		border: 2px solid #4c1864;
-	}
-	.checkbox-role-input{
-    width: 20px;
-    height: 20px;
-    border: 2px solid #4c1864;
-    border-radius: 2px #4c1864;
-}
-.checkbox-role-label:before{
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: 2px solid #4c1864;
-    top: 2px;
-}
-.checkbox-role-label:after{
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: 2px solid #4c1864;
-    top: 2px;
-}
-.checkbox-role .checkbox-role-input:checked ~ .checkbox-role-label::before{
-    background-color: #4c1864;
-}
-</style>
-
 <body id="bg">
 <div class="page-wraper">
 	<div id="loading-icon-bx"></div>
@@ -89,7 +60,7 @@
 					<h2 class="title-head">Login to your <span>Account</span></h2>
 					<p>Don't have an account? <a href="register.php">Create one here</a></p>
 				</div>	
-				<form action="logincode.php" method="POST" class="contact-bx">
+				<form action="register-logincode.php" method="POST" class="contact-bx">
 					<div class="row placeani">
 						<div class="col-lg-12">
 							<div class="form-group">
@@ -108,31 +79,16 @@
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<div class="form-group">
-								<div class="checkbox-role">	
-										<input type="checkbox" class="checkbox-role-input" name="txtapp" value="2" style="width: 20px; height: 20px;">
-										<label class="checkbox-role-label">Are you a enrolled student</label>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-12">
 							<div class="form-group form-forget">
 								<div class="custom-control custom-checkbox">
 									<input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="txtlog" value="1">
 									<label class="custom-control-label" for="customControlAutosizing">Remember me</label>
 								</div>
-								<a href="forget-password.html" class="ml-auto">Forgot Password?</a>
+								<a href="forget-password.php" class="ml-auto">Forgot Password?</a>
 							</div>
 						</div>
 						<div class="col-lg-12 m-b30">
 							<button name="btn_sub" type="submit" value="Submit" class="btn button-md">Login</button>
-						</div>
-						<div class="col-lg-12">
-							<h6>Login with Social media</h6>
-							<div class="d-flex">
-								<a class="btn flex-fill m-r5 facebook" href="#"><i class="fa fa-facebook"></i>Facebook</a>
-								<a class="btn flex-fill m-l5 google-plus" href="#"><i class="fa fa-google-plus"></i>Google Plus</a>
-							</div>
 						</div>
 					</div>
 				</form>
@@ -155,7 +111,7 @@
 <script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
 <script src="assets/js/functions.js"></script>
 <script src="assets/js/contact.js"></script>
-<script src='assets/vendors/switcher/switcher.js'></script>
+<!-- <script src='assets/vendors/switcher/switcher.js'></script> -->
 </body>
 
 </html>

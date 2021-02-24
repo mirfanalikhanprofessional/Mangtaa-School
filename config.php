@@ -12,32 +12,32 @@ class Connectiondbp2 extends Connectiondbp1{
 		return $runconnect;
 	}
 }
-abstract class studentloginareap1 extends Connectiondbp2{
-	abstract function login($email,$password,$txtapp);
+abstract class registeredloginareap1 extends Connectiondbp2{
+	abstract function login($email,$password);
 }
-class studentloginareap2 extends studentloginareap1{
-	function login($email,$password,$txtapp){
-		if(isset($_POST['txtapp'])==2){
-			$query="SELECT * FROM student WHERE Student_email='$email' AND Student_password='$password'";
-			$result = mysqli_query($this->connect(),$query);
-			$count = mysqli_num_rows($result);
-			if($count > 0){
-				header('Location: student-dashboard/dashboard.php');
-			}
-			else{
-	           header("Location: login.php?msg=InvalidLogin");
-			}
-		}
-		else{
-			$query="select * from registered_candidate WHERE Applicant_email='$email' AND Applicant_password='$password'";
-			$result = mysqli_query($this->connect(),$query) or die("hh working");
+class registeredloginareap2 extends registeredloginareap1{
+	function login($email,$password){
+			$result = mysqli_query($this->connect(),"SELECT * FROM registered_candidate WHERE Applicant_email='$email' AND Applicant_password='$password'");
 			$count = mysqli_num_rows($result) or die("not working");
 			if($count > 0){
 				header('Location: student-dashboard/dashboard.php');
 			}
 			else{
-	           header("Location: login.php?msg=Invalid Login");
-			}	
+	           header("Location: register-login.php?msg=Invalid_Login");
+			}
+	}
+}
+abstract class studentloginareap1 extends Connectiondbp2{
+	abstract function login($email,$password);
+}
+class studentloginareap2 extends studentloginareap1{
+	function login($email,$password){
+		$result = mysqli_query($this->connect(), "SELECT * FROM student WHERE Student_email='$email' AND Student_password='$password'");
+		$count = mysqli_num_rows($result);
+		if ($count > 0) {
+			header('Location: student-dashboard/dashboard.php');
+		} else {
+			header("Location: enrolled-login.php?msg=Invalid_Login");
 		}
 	}
 }
