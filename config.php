@@ -41,6 +41,23 @@ class studentloginareap2 extends studentloginareap1{
 		}
 	}
 }
+abstract class adminloginareap1 extends Connectiondbp2
+{
+	abstract function login($email, $password);
+}
+class adminloginareap2 extends adminloginareap1
+{
+	function login($email, $password)
+	{
+		$result = mysqli_query($this->connect(), "SELECT * FROM admin WHERE Admin_email='$email' AND Admin_password='$password'");
+		$count = mysqli_num_rows($result);
+		if ($count > 0) {
+			header('Location: admin-dashboard/dashboard.php');
+		} else {
+			header("Location: admin-login.php?msg=Invalid_Login");
+		}
+	}
+}
 abstract class insert1 extends Connectiondbp2 {
 	abstract function insert($query);
 }

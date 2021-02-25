@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$obj = new studentloginareap2;
+$obj = new adminloginareap2;
 if (isset($_POST['btn_sub'])) 
 {
 	if (isset($_POST['txtlog'])=='1') 
@@ -21,13 +21,12 @@ if (isset($_POST['btn_sub']))
 	else
 	{
 		$email = $_POST['email'];
-		$password = $_POST['pass']
+		$password = $_POST['pass'];
 		
 		session_start();
-		$_SESSION['email'] = $email;
-		$_SESSION['pass'] = $password;
+		$_SESSION['email_part'] = $email;
+		$_SESSION['pass_part'] = $password;
 		
 		$obj->login($email,$password);
 	}
 }
- ?>
