@@ -16,21 +16,28 @@
 		                </a>
 		            </li>
 					<li>
-						<a href="admission.php" class="ttr-material-button">
+						<a href="grade.php" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-book"></i></span>
-		                	<span class="ttr-label">Admisssion</span>
+		                	<span class="ttr-label">Grade</span>
 		                </a>
 		            </li>
 					<li>
 						<a href="student-attendence.php" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-calendar"></i></span>
-		                	<span class="ttr-label">View Attendence</span>
+		                	<span class="ttr-label">Attendence</span>
 		                	<span class=""><i class=""></i></span>
 		                </a>
 		            </li>
-						<a href="#" class="ttr-material-button">
+		            <li>
+						<a href="challan.php" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-calendar"></i></span>
+		                	<span class="ttr-label">Challan</span>
+		                	<span class=""><i class=""></i></span>
+		                </a>
+		            </li>
+						<a href="#" class="ttr-material-icons">
 							<span class="ttr-icon"><i class="ti-user"></i></span>
-		                	<span class="ttr-label">User profile</span>
+		                	<span class="ttr-label">User Profile</span>
 		                	
 		                </a>
 		            </li>

@@ -3,14 +3,28 @@ include('../config.php');
 $obj =  new Connectiondbp2;
 $count = 1;
 $result = mysqli_query($obj->connect(), "SELECT * FROM classes");
-include('header.php');
+include('top-header.php');
 
 ?>
+<style>
+	.d {
+		background: yellow;
+		width: 100%;
+		height: 70px;
+		padding: 2%;
+		color: purple;
+		text-align: center;
+	}
+	body{
+		background-image: url(assets/images/maain.jpg);
+	}
+</style>
+
 <div class="container">
 	<div class="col-1"><?php include('sidebar.php'); ?></div>
 	<div class="col-11 table-responsive small" style="margin-left: 190px; margin-top: 100px;">
-		<h1>Batch information</h1>
-		<h6>Choose a Class to see it's information</h6>
+		<h1 class="d"><b><i>Batch information</b></i></h1>
+		<h4>Choose a Class to see it's information</h4>
 		<form action="" method="POST" class="text-center">
 			<select name="select" class="form-select form-select-sm" aria-label="Default select example">
 				<option> Choose a class to mark attenedence</option>
@@ -26,12 +40,12 @@ include('header.php');
 		<table class='table table-striped small table-sm table-hover mt-5'>
 			<thead>
 				<tr class="text-center">
-					<th scope='col'>Serial number</th>
-					<th scope='col'>Student id</th>
-					<th scope='col'>Name</th>
-					<th scope='col'>Father name</th>
-					<th scope='col'>Student class</th>
-					<th scope='col'>Student email</th>
+					<th scope='col' style="background-color: #f6c2ff">Serial number</th>
+					<th scope='col' style="background-color: #f6c2ff">Student id</th>
+					<th scope='col' style="background-color: #f6c2ff">Name</th>
+					<th scope='col' style="background-color: #f6c2ff">Father name</th>
+					<th scope='col' style="background-color: #f6c2ff">Student class</th>
+					<th scope='col' style="background-color: #f6c2ff">Student email</th>
 				</tr>
 			</thead>
 			<tbody>

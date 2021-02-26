@@ -17,7 +17,7 @@
 <script src="assets/js/admin.js"></script>
 <script src='assets/vendors/calendar/moment.min.js'></script>
 <script src='assets/vendors/calendar/fullcalendar.js'></script>
-<!-- <script src='assets/vendors/switcher/switcher.js'></script> -->
+<script src='assets/vendors/switcher/switcher.js'></script>
 <script>
   $(document).ready(function() {
 

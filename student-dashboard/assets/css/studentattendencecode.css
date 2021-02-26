@@ -1,0 +1,16 @@
+.body{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-image: url(assets/images/main1.jpg);
+}
+.containter-fuild{
+	margin-top: 20%;
+}
+.col-xl-8{
+	"margin-left: 350px;
+}
+.widget-main .padding-34 .hed{
+	text-align: center;
+	background-color:yellow; 
+    font-size:50px;
+}

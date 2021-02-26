@@ -1,19 +1,24 @@
 <?php
 session_start();
 include('../config.php');
-include('header.php');
+include('top-header.php');
 $obj = new selectionp2;
 
 ?>
+<style>
+body{
+	background-image: url(assets/images/maain.jpg)
+}
 
+</style>
 <div class="container">
 	<div class="col-4">
 		<?php include('sidebar.php');  ?> 
 	</div>
 	<div class="col-8" style="margin-left: 330px; margin-top:100px;">
-		<form action="" method="POST">
-			<select name="select">
-				<option selected>Select student</option>
+		<form action="" method="POST" class="text-center">
+			<select name="select" style="margin-left: 20px;" required>
+				<option value="" selected>Select student</option>
 				<?php
 				$query = $obj->select("SELECT * FROM student");
 				while ($row = mysqli_fetch_array($query)) {
@@ -21,10 +26,10 @@ $obj = new selectionp2;
 				}
 				?>
 			</select>
-			<input type="submit" class="btn" value="Go" name="btn_sub">
+			<input type="submit" class="btn" value="Go" name="btn_sub" style="margin-top: 10px;">
 		</form>
 		<div class="row" id="receipt">
-			<div class="col-xl-12">
+			<div class="col-xl-12" style="margin-left: -20px;">
 				<!-- PAGE CONTENT BEGINS -->
 				<div class="space-6"></div>
 
@@ -253,7 +258,7 @@ $obj = new selectionp2;
 </div>
 </div>
 <!-- basic scripts -->
-<button class="btn" onclick="generatePDF()" style="margin-left: 600px;">Print Challan</button>
+<button class="btn" onclick="generatePDF()" style="margin-left: 750px; margin-top: 10px;">Print Challan</button>
 <!--[if !IE]> -->
 <script src="assets/js/jquery-2.1.4.min.js"></script>
 
