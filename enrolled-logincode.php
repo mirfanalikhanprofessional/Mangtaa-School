@@ -22,7 +22,6 @@ if (isset($_POST['btn_sub']))
 	{
 		$email = $_POST['email'];
 		$password = $_POST['pass'];
-		
 		session_start();
 		$_SESSION['email_part'] = $email;
 		$_SESSION['pass_part'] = $password;
