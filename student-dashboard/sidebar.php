@@ -3,7 +3,7 @@
 		<div class="ttr-sidebar-wrapper content-scroll">
 			<!-- side menu logo start -->
 			<div class="ttr-sidebar-logo">
-				<a href="#"><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
+				<a href="#"><img alt="" src="assets/images/logo-job.png" width="80 height="5"></a>
 			</div>
 			<!-- side menu logo end -->
 			<!-- sidebar menu start -->

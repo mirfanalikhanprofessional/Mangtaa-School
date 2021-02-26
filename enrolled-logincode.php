@@ -22,10 +22,14 @@ if (isset($_POST['btn_sub']))
 	{
 		$email = $_POST['email'];
 		$password = $_POST['pass'];
+		
+		$query = mysqli_query($obj->connect(), "SELECT * FROM student WHERE Student_email='$email'");
+		$count = mysqli_fetch_array($query);
 		session_start();
 		$_SESSION['email_part'] = $email;
 		$_SESSION['pass_part'] = $password;
-		
+		$_SESSION['id'] = $count[0];
+		$_SESSION['name'] = $count[1];
 		$obj->login($email,$password);
 	}
 }
