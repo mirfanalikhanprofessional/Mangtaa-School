@@ -19,11 +19,12 @@ if (isset($_POST['add-btn']))
 	$email = $_POST['txtemail'];
 	$select = $_POST['txtselect'];
 	$role = "Registered";
-	$status = 'Unactive';
+	$status = $_POST['status'];
+    $class = $_POST['txtclass'];
 	$query = mysqli_query($obj->connect, "SELECT Applicant_password FROM registered_candidate WHERE Applicant_name = $name");
 	$row  = mysqli_fetch_array($query);
 	$password  = $row[3];	
-	$admission = $obj->admission("INSERT INTO student(`Student_name`,`Student_class`,`Student_email`,`Student_password`,`City`,`State`,`Post_code`,`Student_mobile`,`Student_address`,`Student_guardian_name`,`Student_guardian_occupation`,`Student_home_contact`,`Social_link`,`Role`,`Status`) VALUES('$name','$email','','$city','$state','$postcode','$studentcontact','$address','$guardianname','$guardianoccupation','$guardiancontact','$social_link','$role','Unactive')");
+	$admission = $obj->admission("UPDATE student SET `Student_name` = '$name', `Student_class` = '$class' , `Student_email` = '$email' , `City` = '$city' , `State` = '$state',`Post_code`='$postcode',`Student_mobile`='$studentcontact',`Student_address`='$address',`Student_guardian_name`='$guardianname',`Student_guardian_occupation`='$guardianoccupation',`Student_home_contact`='$guardiancontact',`Social_link`='$social_link',`Role`='$role',`Status`='$status' WHERE `Student_name`='$select'");
 	if($admission == true){
 		return true;
 	}
@@ -32,4 +33,3 @@ if (isset($_POST['add-btn']))
 	}
 	header("Location: dashboard.php");
 }
- ?>

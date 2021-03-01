@@ -61,22 +61,8 @@ $obj = new createclassp2;
                 $class_code = $_POST['class_code'];
                 $teacher_name = $_POST['teacher'];
                 $status = $_POST['status'];
-
                 $create = $obj->create("INSERT INTO class_new(`Class_code`,`Teacher`,`Status`) VALUES('$class_code','$teacher_name','$status')");
-
-
-
-
-                /* if ($create > 0) {
-                    return true;
-                    header('admin-dashboard/batch-information.php?msg=class_created_sucessfully');
-                } else {
-                    return false;
-                    header('create-class.php?msg=class_not_created_sucessfully');
-                    echo ('class creation failed');
-                } */
             }
-
             ?>
 
 

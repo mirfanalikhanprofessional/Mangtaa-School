@@ -23,10 +23,10 @@ header('Location:index.php');
 	$status = "Absent";
 	$query = mysqli_query($obj->connect(),"INSERT iNTO attendence(Student_id,Student_name,mark_date,status) VALUES('$id','$name','$date','$status')") or die("nothing happens");
 	if($query > 0){
-		header('Location: admin-attendence.php?msg=attendence_marked_sucessfully');
+		header('Location: mark-attendence.php?msg=attendence_marked_sucessfully');
 	} 
 	else{
-		header('Location: admin-attendence.php?msg=attendece_not_marked');
+		header('Location: mark-attendence.php?msg=attendece_not_marked');
 	}
 
 /*}*/

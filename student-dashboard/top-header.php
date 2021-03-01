@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from educhamp.themetrades.com/demo/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:08:15 GMT -->
+
 <head>
 	<!-- META ============================================= -->
 	<meta charset="utf-8">
@@ -37,17 +38,19 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/challan.css">
 </head>
+
 <body class="ttr-opened-sidebar ttr-pinned-sidebar">
-<!-- header start -->
+	<!-- header start -->
 	<header class="ttr-header">
 		<div class="ttr-header-wrapper">
-				<!--logo start -->
+			<!--logo start -->
 			<div class="ttr-logo-box">
 				<div>
 					<a href="index.html" class="ttr-logo">
-						<img class="ttr-logo-mobile" alt="" src="assets/images/logo-job.png" width="30" height="20">
-						<img class="ttr-logo-desktop" alt="" src="assets/images/logo-job.png" width="50" height="0.1">
+						<img class="ttr-logo-mobile" alt="" src="assets/images/logo-job.png" width="30" height="8">
+						<img class="ttr-logo-desktop" alt="" src="assets/images/logo-job.png" width="60" height="5" style="margin-left: 35px;">
 					</a>
 				</div>
 			</div>

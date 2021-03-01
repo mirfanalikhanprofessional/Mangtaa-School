@@ -1,32 +1,54 @@
 <?php
 include('config.php');
-$obj = new adminloginareap2;
-if (isset($_POST['btn_sub'])) 
-{
-	if (isset($_POST['txtlog'])=='1') 
+$obj = new Connectiondbp2;
+if(isset($_POST['btn_sub'])){
+	
+	if (isset($_POST['txtlog'])=="1") 
 	{
-		$email=mysqli_real_escape_string($obj->connect(),$_REQUEST['email']);
-		$_COOKIE['email']=$email;
-		$email=$_COOKIE['email'];
 
-		$pass=mysqli_real_escape_string($obj->connect(),$_REQUEST['pass']);
-		$_COOKIE['pass']=$pass;
-		$password=$_COOKIE['pass'];
+			$email=mysqli_real_escape_string($obj->connect(),$_REQUEST['email']);
+			$_COOKIE['email']=$email;
+			$email=$_COOKIE['email'];
 
-		setcookie("email", $email, time()+30,"/");  
-		setcookie("pass", $password, time()+30,"/");  
+			$pass=mysqli_real_escape_string($obj->connect(),$_REQUEST['pass']);
+			$_COOKIE['pass']=$pass;
+			$password=$_COOKIE['pass'];
 
-		$obj->login($email,$password);
-	} 
+			setcookie("email", $email, time()+30,"/");  
+			setcookie("pass", $password, time()+30,"/");  
+
+			$result = mysqli_query($obj->connect(), "SELECT * FROM admin WHERE Admin_email='$email' AND Admin_password='$password'") or die("eork damit");
+			$count = mysqli_num_rows($result) or die("not working");
+			if ($count > 0) {
+				header('Location: admin-dashboard/dashboard.php');
+			} else {
+				header("Location: ../admin-login.php?msg=Invalid_Login");
+			}
+		} 
 	else
-	{
-		$email = $_POST['email'];
-		$password = $_POST['pass'];
-		
-		session_start();
-		$_SESSION['email_part'] = $email;
-		$_SESSION['pass_part'] = $password;
-		
-		$obj->login($email,$password);
-	}
+		{
+			$email = $_POST['email'];
+			$password = $_POST['pass'];
+			session_start();
+			$_SESSION['email_part'] = $email;
+			$_SESSION['pass_part'] = $password;
+			$result = mysqli_query($obj->connect(), "SELECT * FROM admin WHERE Admin_email='$email' AND Admin_password='$password'") or die("eork damit");
+			$count = mysqli_num_rows($result) or die("not working");
+			if ($count > 0) {
+				header('Location: admin-dashboard/dashboard.php');
+				session_start();
+				while($row = mysqli_fetch_array($result)){
+				$_SESSION['email_part'] = $email;
+				$_SESSION['pass_part'] = $password;
+				}
+			} else {
+				header("Location: ../admin-login.php?msg=Invalid_Login");
+			}
+			
+			
+		}
 }
+/* 	else{
+		echo "please try again";
+	} */
+

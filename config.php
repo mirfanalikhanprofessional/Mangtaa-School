@@ -17,7 +17,7 @@ abstract class registeredloginareap1 extends Connectiondbp2{
 }
 class registeredloginareap2 extends registeredloginareap1{
 	function login($email,$password){
-			$result = mysqli_query($this->connect(),"SELECT * FROM registered_candidate WHERE Applicant_email='$email' AND Applicant_password='$password'");
+			$result = mysqli_query($this->connect(),"SELECT * FROM registered_candidate WHERE Applicant_email='$email' AND Applicant_password='$password'") or die("eork damit");
 			$count = mysqli_num_rows($result) or die("not working");
 			if($count > 0){
 				header('Location: student-dashboard/dashboard.php');

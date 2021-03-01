@@ -28,15 +28,15 @@ include('top-header.php');
 		<table class='table table-striped small table-sm table-hover mt-5'>
 			<thead>
 				<tr class="text-center">
-					<th scope='col'>Serial number</th>
-					<th scope='col'>Student id</th>
-					<th scope='col'>Name</th>
-					<th scope='col'>Father name</th>
-					<th scope='col'>Student class</th>
-					<th scope='col'>Student email</th>
-					<th scope='col'>Student mobile</th>
-					<th scope='col'>Student home contact</th>
-					<th scope='col'>Student address</th>
+					<th scope='col' style="background-color: #f6c2ff;">Serial number</th>
+					<th scope='col' style="background-color: #f6c2ff;">Student id</th>
+					<th scope='col' style="background-color: #f6c2ff;">Name</th>
+					<th scope='col' style="background-color: #f6c2ff;">Father name</th>
+					<th scope='col' style="background-color: #f6c2ff;">Student class</th>
+					<th scope='col' style="background-color: #f6c2ff;">Student email</th>
+					<th scope='col' style="background-color: #f6c2ff;">Student mobile</th>
+					<th scope='col' style="background-color: #f6c2ff;">Student home contact</th>
+					<th scope='col' style="background-color: #f6c2ff;">Student address</th>
 				</tr>
 			</thead>
 			<tbody>

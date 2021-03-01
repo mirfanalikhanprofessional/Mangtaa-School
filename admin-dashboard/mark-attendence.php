@@ -21,9 +21,9 @@ include("top-header.php");
 
 <div class="container-fluid">
 	<div class="col-4">
-		<?php
-		include("sidebar.php");
-		?>
+		
+/* 		include("sidebar.php"); */
+		
 	</div>
 	<div class="col-8" style="margin-top: 100px;">
 		<h1 class="d"><b><i>Choose a Class to mark it's attendence</i></b></h1>
@@ -40,7 +40,7 @@ include("top-header.php");
 				</select>
 			</div>
 			<input type="submit" name="btn_sub" class="btn mt-2" style="width: 10%; height: 45px; margin-left: 40%; margin-top: -9%; background-color: #f6c2ff">
-		</form>
+		</form><br>
 		<table class='table table-sm table-striped table-hover' style='margin-left: 350px;'>
 			<thead>
 				<tr>
@@ -53,20 +53,36 @@ include("top-header.php");
 				<?php
 				if (isset($_POST['btn_sub'])) {
 					$select = $_POST['select'];
-					if (isset($select)) {
-						$query =  mysqli_query($obj->connect(), "SELECT * FROM student WHERE/*  Rol */ Student_class = '$select'");
+					if (isset($_POST['select'])) {
+						$query =  mysqli_query($obj->connect(),"SELECT * FROM student WHERE Student_class = '$select'");
 						while ($row = mysqli_fetch_array($query)) {
-							$count = 1;
-							echo "<tr>
-										<td>" . $count++ . "</td>
-										<td>$row[1]</td>
-										<td><a class='btn' href='present.php?id=$row[0]' style='background-color:#f6c2ff;'>Present</a>
-											<a class='btn' href='absent.php?id=$row[0]' style='background-color:#f6c2ff;'>Absent</a>
-											<a class='btn' href='leave.php?id=$row[0]' style='background-color:#f6c2ff;'>Leave</a>
-										</td>
-									</tr><br>";
-						}
-						echo "</tbody></table></div></div></body></html>";
+								$student_names = $row[1]; 
+								$timescheck = date('y-m-d');	
+								$count = 1;
+									echo "<tr>
+											<td>".$count++. "</td>
+											<td>".$row[1]."</td>";
+											$check_query = mysqli_query($obj->connect(),"SELECT * FROM attendence WHERE Student_name = '$student_names' AND mark_date = '$timescheck'") or die('not wworking');
+											while ($rowpart = mysqli_fetch_array($check_query)) {
+												if (mysqli_num_rows($check_query) > 0) {
+													if ($student_names == $rowpart['Student_name']  && $timescheck == $rowpart['mark_date']){
+														echo "<td><a class='btn disabled' href='present.php?id=$row[0]' style='background-color:#f6c2ff;'>Present</a>
+																<a class='btn disabled' href='absent.php?id=$row[0]' style='background-color:#f6c2ff;'>Absent</a>
+																<a class='btn disabled' href='leave.php?id=$row[0]' style='background-color:#f6c2ff;'>Leave</a>
+														</td>" or die('stop');
+													}
+													else{
+														echo "<td><a class='btn' href='present.php?id=$row[0]' style='background-color:#f6c2ff;'>Present</a>
+															<a class='btn' href='absent.php?id=$row[0]' style='background-color:#f6c2ff;'>Absent</a>
+															<a class='btn' href='leave.php?id=$row[0]' style='background-color:#f6c2ff;'>Leave</a>
+														</td>";
+														
+													}
+												}
+											}
+									echo "</tr>";
+						}	
+								echo "</tbody></table></div></div></body></html>";
 					}
 				}
 				?>

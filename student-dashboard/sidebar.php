@@ -2,9 +2,9 @@
 	<div class="ttr-sidebar">
 		<div class="ttr-sidebar-wrapper content-scroll">
 			<!-- side menu logo start -->
-			<div class="ttr-sidebar-logo">
-				<a href="#"><img alt="" src="assets/images/logo-job.png" width="80 height="5"></a>
-			</div>
+			<!-- <div class="ttr-sidebar-logo">
+				<a href="#"><img alt="" src="assets/images/logo-job.png" width="60" height="2" style="margin-left: 55px; margin-top: -25px;;"></a>
+			</div> -->
 			<!-- side menu logo end -->
 			<!-- sidebar menu start -->
 			<nav class="ttr-sidebar-navi">

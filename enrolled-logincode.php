@@ -14,8 +14,12 @@ if (isset($_POST['btn_sub']))
 		$password=$_COOKIE['pass'];
 
 		setcookie("email", $email, time()+30,"/");  
-		setcookie("pass", $password, time()+30,"/");  
-
+		setcookie("pass", $password, time()+30,"/");
+		$query = mysqli_query($obj->connect(), "SELECT * FROM student WHERE Student_email='$email'");
+		$count = mysqli_fetch_array($query);
+		session_start();
+		$_SESSION['id'] = $count[0];
+		$_SESSION['name'] = $count[1];
 		$obj->login($email,$password);
 	} 
 	else
