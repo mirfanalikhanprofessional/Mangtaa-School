@@ -21,6 +21,13 @@ if(isset($_POST['btn_sub'])){
 			$count = mysqli_num_rows($result) or die("not working");
 			if ($count > 0) {
 				header('Location: admin-dashboard/dashboard.php');
+			session_start();
+			while ($row = mysqli_fetch_array($result)) {
+				$_SESSION['email_part'] = $email;
+				$_SESSION['pass_part'] = $password;
+				$_SESSION['Student_name'] = $row[1];
+				$_SESSION['Student_id'] = $row[0];
+			}
 			} else {
 				header("Location: ../admin-login.php?msg=Invalid_Login");
 			}
@@ -40,6 +47,8 @@ if(isset($_POST['btn_sub'])){
 				while($row = mysqli_fetch_array($result)){
 				$_SESSION['email_part'] = $email;
 				$_SESSION['pass_part'] = $password;
+				$_SESSION['Student_name'] = $row[1];
+				$_SESSION['Student_id'] = $row[0];
 				}
 			} else {
 				header("Location: ../admin-login.php?msg=Invalid_Login");
