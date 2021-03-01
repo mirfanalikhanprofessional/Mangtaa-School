@@ -22,8 +22,8 @@ if (isset($_POST['btn_sub']))
 			header('Location: student-dashboard/dashboard.php');
 			session_start();
 			while ($row = mysqli_fetch_array($result)) {
-				$_SESSION['Student_name'] = $row[1];
-				$_SESSION['Student_id'] = $row[0];
+				$_SESSION['name'] = $row[1];
+				$_SESSION['id'] = $row[0];
 			}
 		} else {
 			header("Location: ../register-login.php?msg=Invalid_Login");
@@ -42,9 +42,9 @@ if (isset($_POST['btn_sub']))
 			session_start();
 			while ($row = mysqli_fetch_array($result)) {
 				$_SESSION['email_part'] = $email;
-				$_SESSION['pass_part'] = $password;
-				$_SESSION['Student_name']=$row[1];
-				$_SESSION['Student_id'] = $row[0];
+				$_SESSION['pass'] = $password;
+				$_SESSION['name']=$row[1];
+				$_SESSION['id'] = $row[0];
 			}
 		} else {
 			header("Location: ../register-login.php?msg=Invalid_Login");
